@@ -8,21 +8,23 @@ const title = 'Sorting Articles'
 
 function App({ articles }) {
   const [flag, setFlag] = useState(true)
+
   const sortedVotes = () => {
     let res
-    articles.sort((a, b) =>
-      a.upvotes > b.upvotes ? -1 : b.upvotes > a.upvotes ? 1 : 0
-    )
+    articles.sort((a, b) => a.upvotes > b.upvotes ? -1 : b.upvotes > a.upvotes ? 1 : 0)
     res = articles
     return res
   }
+
   const sortedDate = () => {
     let res
     articles.sort((a, b) => (a.date > b.date ? -1 : b.date > a.date ? 1 : 0))
     res = articles
     return res
   }
-  useEffect(() => {}, [flag])
+
+  useEffect(() => { }, [flag])
+
   return (
     <div className='App'>
       <h8k-navbar header={title}></h8k-navbar>
